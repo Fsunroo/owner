@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lottery Contract Interaction</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="abi.js"></script> <!-- Include the ABI file before your main script -->
+</head>
+<body>
+    <h1>Lottery Contract Interaction</h1>
+    <button id="connectWallet">Connect Wallet</button>
+    <div id="walletAddress"></div>
+    
+    <h2>Buy Tickets</h2>
+    <input type="number" id="numTickets" placeholder="Number of Tickets">
+    <button onclick="buyTickets()">Buy Tickets</button>
+    
+    <h2>Current Round Details</h2>
+    <div id="roundDetails"></div>
+    
+    <script src="app.js"></script> <!-- Your main JavaScript file that uses the ABI -->
+</body>
+</html>
