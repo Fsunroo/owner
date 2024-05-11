@@ -1,4 +1,9 @@
-const abi = [
+const abi =[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
 	{
 		"inputs": [
 			{
@@ -14,28 +19,10 @@ const abi = [
 	},
 	{
 		"inputs": [],
-		"name": "givePrizes",
+		"name": "cancelRound",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_ticketPrice",
-				"type": "uint256"
-			}
-		],
-		"name": "startRound",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
 	},
 	{
 		"inputs": [],
@@ -168,6 +155,13 @@ const abi = [
 	},
 	{
 		"inputs": [],
+		"name": "givePrizes",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "isAnyRoundActive",
 		"outputs": [
 			{
@@ -258,6 +252,19 @@ const abi = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_ticketPrice",
+				"type": "uint256"
+			}
+		],
+		"name": "startRound",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

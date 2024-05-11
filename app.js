@@ -1,6 +1,7 @@
 let web3;
 let lotteryContract;
-const contractAddress = '0x3328358128832A260C76A4141e19E2A943CD4B6D'; // Replace with your contract address
+const contractAddress = '0xC4Df03E9d6Be89A7ba58B92fAaAA46CE2A0f1329'; // Replace with your contract address
+let accounts;
 
 document.getElementById('connectWallet').addEventListener('click', async () => {
     if (window.ethereum) {
@@ -49,3 +50,26 @@ async function getRoundDetails() {
     `;
     document.getElementById('roundDetails').innerText = details;
 }
+
+async function startNewRound(){
+    const ticketPrice = parseInt(document.getElementById('ticketPrice').value);
+    const accounts = await web3.eth.getAccounts();
+    // console.log(ticketPrice*(10**18))
+    lotteryContract.methods.startRound(ticketPrice*(10**18)).send({
+        'from':accounts[0]
+    })
+}
+
+async function givePrize(){
+    const accounts = await web3.eth.getAccounts();
+    lotteryContract.methods.givePrizes().send({
+        'from':accounts[0]
+    })
+}
+
+async function cancelRound(){
+    const accounts = await web3.eth.getAccounts();
+    lotteryContract.methods.cancelRound().send({
+        'from':accounts[0]
+    })
+} 
